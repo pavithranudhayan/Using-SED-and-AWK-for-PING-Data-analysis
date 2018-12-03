@@ -5,6 +5,7 @@ $ ping -c 4 google.com |
 2   0.036
 3   0.0357
 4   0.0363
+
 Personally, I would do it using grep and only use awk for multiplying the milliseconds by 1000:
 
 $ ping -c4 google.com | grep -Po 'time=\K[\d.]+' | awk '{print NR,$1/1000}'
